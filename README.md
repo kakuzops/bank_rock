@@ -55,7 +55,9 @@ mix test
 
 ### Without authentication.
 
+
 ### Endpoint:
+
 ```
 POST /api/account/sign_up
 ```
@@ -192,7 +194,7 @@ POST /api/transaction/create
       {
         "transaction":
         {
-          "operation_type": "withServer's Up!draw",
+          "operation_type": "withdraw",
           "amount": 100000,
         }
       }
