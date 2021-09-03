@@ -48,9 +48,9 @@ defmodule BankRock.Transactions.Transaction do
   end
 
   defp validate_valid_amount(%Ecto.Changeset{changes: %{amount: amount}} = changeset) do
-    if amount < 0 do
+    if amount <= 0 do
       changeset
-      |> add_error(:balance, "amount cannot be negative")
+      |> add_error(:balance, "amount cannot be 0 or negative")
     else
       changeset
     end
