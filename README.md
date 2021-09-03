@@ -64,11 +64,11 @@ POST /api/account/sign_up
 
 ```
       {
-        "account" =>
+        "account" :
         {
-          "name" => name,
-          "email" => email,
-          "password" => password
+          "name" : name,
+          "email" : email,
+          "password" : password
         }
       }
 ```
@@ -87,7 +87,7 @@ POST /api/account/sign_up
 ```
 #### 422
 ```
-{"errors" => {"detail" => {"email" => ["can't be blank"]}}}
+{"errors" : {"detail" : {"email" : ["can't be blank"]}}}
 ```
 
 ### Endpoint:
@@ -99,10 +99,10 @@ POST /api/account/sign_in
 
 ```
       {
-        "account" =>
+        "account":
         {
-          "email" => email,
-          "password" => password
+          "email": email,
+          "password": password
         }
       }
 ```
@@ -117,7 +117,7 @@ POST /api/account/sign_in
 ```
 #### 401
 ```
-{"errors" => %{"detail" => "Unauthorized"}}
+{"errors" : %{"detail" : "Unauthorized"}}
 ```
 
 
@@ -145,7 +145,7 @@ type could be this following options:
 ```
 {
   {
-    "report" => {"type" => type}
+    "report" : {"type" : type}
   }
 }
 ```
@@ -154,12 +154,12 @@ type could be this following options:
 
 #### 200
 ```
-{"amount" => "R$0.00", "transactions" => []}
+{"amount" : "R$0.00", "transactions" : []}
 ```
 
 #### 400
 ```
-{"errors" => %{"detail" => "Bad Request"}}
+{"errors": %{"detail": "Bad Request"}}
 ```
 
 ### Bearer Authentication (JWT Token)
@@ -178,11 +178,11 @@ POST /api/transaction/create
 ##### Transfer:
 ```
       {
-        "transaction" =>
+        "transaction":
         {
-          "operation_type" => "transfer",
-          "amount" => 100000,
-          "receiver_id" => "Random.uuid"
+          "operation_type": "transfer",
+          "amount": 100000,
+          "receiver_id": "Random.uuid"
         }
       }
 ```
@@ -190,10 +190,10 @@ POST /api/transaction/create
 ##### Withdraw:
 ```
       {
-        "transaction" =>
+        "transaction":
         {
-          "operation_type" => "withServer's Up!draw",
-          "amount" => 100000,
+          "operation_type": "withServer's Up!draw",
+          "amount": 100000,
         }
       }
 ```
@@ -226,7 +226,7 @@ POST /api/transaction/create
 
 #### 422
 ```
-"errors" => {"detail" => {"balance" => ["amount cannot be negative"]}}
+"errors": {"detail": {"balance": ["amount cannot be negative"]}}
 ```
 
 ## Deploy
@@ -235,8 +235,3 @@ Application available at:
 ```
 https://bankrock.gigalixirapp.com/
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update the tests as appropriate.
